@@ -1,0 +1,39 @@
+.warning {
+  position: fixed;
+  top: 0;
+  width: 75%;
+  left: 50%;
+  margin-left: -37.5%;
+  text-align: center;
+  color: white;
+  background-color: rgba(255,0,0,0.5);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.warning-enter {
+  opacity: 0.01;
+}
+
+.warning-enter.warning-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.warning-appear {
+  opacity: 0.01;
+}
+
+.warning-appear.warning-appear-active {
+  opacity: 1;
+  transition: opacity .3s ease-in;
+}
+
+.warning-leave {
+  opacity: 1;
+}
+
+.warning-leave.warning-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}

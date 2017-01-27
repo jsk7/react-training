@@ -1,0 +1,84 @@
+.tareas {
+  margin-top: 50px;
+
+  .tarea {
+    margin: 5px auto;
+  }
+}
+
+.state {
+  margin-left: 50%;
+
+  transition: background-color 300ms ease-in;
+}
+
+.circle {
+  display: block;
+  height: 22px;
+  width: 22px;
+  border-radius: 50%;
+  border: 2px solid rgba(0,204,0,0.8);
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.tick {
+    display:block;
+    width: 22px;
+    height:22px;
+    background: rgba(0,204,0,0.8);
+    border-radius:50%;
+    -ms-transform: rotate(45deg); /* IE 9 */
+    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    transform: rotate(45deg);
+
+    &:before {
+      content:"";
+      position: absolute;
+      width:3px;
+      height:9px;
+      background-color:#fff;
+      left:11px;
+      top:6px;
+    }
+
+    &:after {
+      content:"";
+      position: absolute;
+      width:3px;
+      height:3px;
+      background-color:#fff;
+      left:8px;
+      top:12px;
+    }
+}
+
+
+.task-enter {
+  opacity: 0.01;
+}
+
+.task-enter.task-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.task-appear {
+  opacity: 0.01;
+}
+
+.task-appear.task-appear-active {
+  opacity: 1;
+  transition: opacity .3s ease-in;
+}
+
+.task-leave {
+  opacity: 1;
+}
+
+.task-leave.task-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}

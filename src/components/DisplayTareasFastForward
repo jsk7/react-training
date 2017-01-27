@@ -1,0 +1,30 @@
+import React from 'react';
+import {Col, Row} from 'react-bootstrap';
+import './DisplayTareas.scss';
+
+export default class DisplayTareas extends React.Component {
+
+  render() {
+    return (
+      <div className="tareas">
+        <Col lg={4} md={4} sm={4} xsHidden />
+        <Col lg={4} md={4} sm={4} xs={12}>
+          {
+            this.props.tareas &&
+            this.props.tareas.map((tarea) => (
+            <Row onClick={this.props.action.apply(null, [tarea])} className="tarea">
+              <Col lg={10} md={10} sm={10} xs={10}>
+                <span>{tarea.nombre}</span>
+              </Col>
+              <Col lg={2} md={2} sm={2} xs={2}>
+                <span className={'state ' + (tarea.completada ? 'tick' : 'circle')}/>
+              </Col>
+            </Row>
+          ))}
+        </Col>
+        <Col lg={4} md={4} sm={4} xsHidden />
+
+    </div>
+    )
+    }
+  }
