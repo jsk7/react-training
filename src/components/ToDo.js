@@ -1,10 +1,10 @@
 import React, {update} from 'react';
 import DisplayTareas from './DisplayTareas';
-import './App.scss';
+import './ToDo.scss';
 import WarningMessage from './WarningMessage';
 
 
-export default class App extends React.Component {
+export default class ToDo extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -26,7 +26,6 @@ export default class App extends React.Component {
   }
 
   agregarTarea(e) {
-    // https://facebook.github.io/react/docs/update.html
     e.preventDefault();
     if(this.state.inputTarea === '') {
       this.setState({
@@ -40,7 +39,7 @@ export default class App extends React.Component {
     };
     const tareas = this.state.tareas.splice(0);
     tareas.push(nuevaTarea);
-
+    
     this.setState({
       inputTarea: '',
       tareas: tareas
