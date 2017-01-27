@@ -2,6 +2,7 @@ import React, {update} from 'react';
 import DisplayTareas from './DisplayTareas';
 import './ToDo.scss';
 import WarningMessage from './WarningMessage';
+import AgregarTarea from './AgregarTarea'
 
 
 export default class ToDo extends React.Component {
@@ -39,7 +40,7 @@ export default class ToDo extends React.Component {
     };
     const tareas = this.state.tareas.splice(0);
     tareas.push(nuevaTarea);
-    
+
     this.setState({
       inputTarea: '',
       tareas: tareas
@@ -61,14 +62,9 @@ export default class ToDo extends React.Component {
       <div>
         <WarningMessage show={this.state.intentoGuardarTareaVacia} />
         <div className="app">
-          <form onSubmit={this.agregarTarea.bind(this)}>
-            <input type="text"
-                    onChange={this.nuevaTarea.bind(this)}
-                    value={this.state.inputTarea}
-                    placeholder="Inserte tarea"
-                    size="30"/>
-            <input type="submit" value="Agregar"/>
-          </form>
+          <AgregarTarea agregarTarea={this.agregarTarea.bind(this)}
+                        guardarTarea={this.nuevaTarea.bind(this)}
+                        value={this.state.inputTarea} />
           <DisplayTareas tareas={this.state.tareas} completar={this.completarTarea.bind(this)}/>
         </div>
       </div>
